@@ -1,21 +1,24 @@
-enchant.TextField = enchant.Class.create(enchant.Group, {
+enchant.TextField = enchant.Class.create(enchant.Node, {
   initialize: function(width, height) {
-    enchant.Group.call(this);
+    enchant.Node.call(this);
 
-    this.width = width;
-    this.height = height;
+    // Remove 37 (left-key), 39 (right-key) and 32 (space-key)
+    // from 'enchant.ENV.PREVENT_DEFAULT_KEY_CODES'
+    this._setPreventDefaultKeyCodes();
 
-    this.sprite = new enchant.Sprite(width, height);
-    this.surface = new enchant.Surface(width, height);
-    this.surface.context.fillStyle = "#fff";
-    this.surface.context.fillRect(this.x, this.y, width, height);
-    this.sprite.image = this.surface;
-    this.addChild(this.sprite);
+    this._width = width;
+    this._height = height;
 
-    // var label = enchant.Label();
-    // label.text = 'hello!';
-    // label.font = '80px Arial';
+    this.input = document.createElement('input');
+    this.input.type = 'text';
+    document.body.appendChild(this.input);
+  },
 
-    // this.addChild(label);
+  _setPreventDefaultKeyCodes: function() {
+    var codes = enchant.ENV.PREVENT_DEFAULT_KEY_CODES;
+    codes = codes.filter(function (code) {
+      return (code !== 37 & code !== 39 && code !== 32);
+    });
+    enchant.ENV.PREVENT_DEFAULT_KEY_CODES = codes;
   }
 });
