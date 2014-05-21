@@ -18,7 +18,7 @@ enchant.TextField = enchant.Class.create(enchant.Node, {
   _setPreventDefaultKeyCodes: function() {
     var codes = enchant.ENV.PREVENT_DEFAULT_KEY_CODES;
     codes = codes.filter(function (code) {
-      return (code !== 37 & code !== 39 && code !== 32);
+      return (code !== 37 && code !== 39 && code !== 32);
     });
     enchant.ENV.PREVENT_DEFAULT_KEY_CODES = codes;
   }
