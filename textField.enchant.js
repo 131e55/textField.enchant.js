@@ -11,7 +11,8 @@ enchant.TextField = enchant.Class.create(enchant.Node, {
 
     this.input = document.createElement('input');
     this.input.type = 'text';
-    document.body.appendChild(this.input);
+    this.input.style.position = 'absolute';
+    enchant.Core.instance._element.appendChild(this.input);
   },
 
   _setPreventDefaultKeyCodes: function() {
