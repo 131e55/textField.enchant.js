@@ -18,6 +18,9 @@ window.onload = function () {
     field.onblur = function () {
       label.text = 'onblur called!!';
     };
+    field.onreturn = function () {
+      label.text = 'onreturn called!!';
+    };
 
     core.rootScene.addChild(field);
 

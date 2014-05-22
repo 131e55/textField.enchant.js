@@ -4,6 +4,9 @@
       enchant.DomLayer.call(this);
       var that = this;
 
+      // For .onreturn accessor
+      this._onreturn = null;
+
       // Remove 37 (left-key), 39 (right-key) and 32 (space-key)
       // from 'enchant.ENV.PREVENT_DEFAULT_KEY_CODES'
       this._setPreventDefaultKeyCodes();
@@ -21,6 +24,18 @@
         this.scene.on('touchstart', function () {
           that.blur();
         });
+      });
+
+      // Blur input element, when the retuen-key pressed
+      // And, call .onreturn() 
+      this._input.addEventListener('keypress', function (e) {
+        if (e.keyCode === 13) {
+          this.blur();
+
+          if (typeof that._onreturn === 'function') {
+            that._onreturn();
+          }
+        };
       });
     },
 
@@ -47,7 +62,7 @@
       },
       set: function(f) {
         this._input.onfocus = f;
-      },
+      }
     },
 
     /*
@@ -59,7 +74,20 @@
       },
       set: function(f) {
         this._input.onblur = f;
+      }
+    },
+
+    /*
+    * Accessor of onreturn
+    * Call when the return-key pressed.
+    */
+    onreturn: {
+      get: function() {
+        return this._onreturn;
       },
+      set: function(f) {
+        this._onreturn = f;
+      }
     },
 
     /*
