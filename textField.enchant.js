@@ -5,7 +5,6 @@
       var that = this;
 
       // for accessor
-      this._value = '';
       this._onreturn = null;
 
       // Remove 37 (left-key), 39 (right-key) and 32 (space-key)
@@ -19,6 +18,8 @@
       this._input.style.width = '100%';
       this._input.style.height = '100%';
       this._element.appendChild(this._input);
+
+      this._input.setAttribute('placeholder', 'aaaa');
 
       // Blur input element, when scene touched (not input element)
       this.on('addedtoscene', function () {
@@ -49,6 +50,18 @@
       },
       set: function(v) {
         this._input.value = v;
+      }
+    },
+
+    /*
+    * placeholder accessor
+    */
+    placeholder: {
+      get: function() {
+        return this._input.getAttribute('placeholder');
+      },
+      set: function(v) {
+        this._input.setAttribute('placeholder', v);
       }
     },
 

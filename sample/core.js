@@ -11,6 +11,7 @@ window.onload = function () {
     field.height = 24;
     field.x = (core.width - field.width) / 2;
     field.y = 64;
+    field.placeholder = 'what is your name ?';
 
     field.onfocus = function () {
       label.text = 'onfocus called!!';
