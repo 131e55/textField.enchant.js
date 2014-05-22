@@ -6,7 +6,9 @@ window.onload = function () {
   core.onload = function () {
     core.rootScene.backgroundColor = "#eee";
 
-    var field = new TextField(128, 32);
+    var field = new TextField();
+    field.x = 96;
+    field.y = 32;
     core.rootScene.addChild(field);
   };
 
