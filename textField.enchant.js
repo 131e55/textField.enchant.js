@@ -9,12 +9,12 @@
       this._setPreventDefaultKeyCodes();
 
       // input element
-      this.input = document.createElement('input');
-      this.input.type = 'text';
-      this.input.style.boxSizing = 'border-box';
-      this.input.style.width = '100%';
-      this.input.style.height = '100%';
-      this._element.appendChild(this.input);
+      this._input = document.createElement('input');
+      this._input.type = 'text';
+      this._input.style.boxSizing = 'border-box';
+      this._input.style.width = '100%';
+      this._input.style.height = '100%';
+      this._element.appendChild(this._input);
 
       // Blur input element, when scene touched (not input element)
       this.on('addedtoscene', function () {
@@ -28,14 +28,38 @@
     * Focus input element
     */
     focus: function() {
-      this.input.focus();
+      this._input.focus();
     },
 
     /*
     * Blur input element
     */
     blur: function() {
-      this.input.blur();
+      this._input.blur();
+    },
+
+    /*
+    * Accessor of onfocus
+    */
+    onfocus: {
+      get: function() {
+        return this._input.onfocus;
+      },
+      set: function(f) {
+        this._input.onfocus = f;
+      },
+    },
+
+    /*
+    * Accessor of onblur
+    */
+    onblur: {
+      get: function() {
+        return this._input.onblur;
+      },
+      set: function(f) {
+        this._input.onblur = f;
+      },
     },
 
     /*

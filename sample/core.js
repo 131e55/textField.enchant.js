@@ -7,12 +7,27 @@ window.onload = function () {
     core.rootScene.backgroundColor = '#eee';
 
     var field = new TextField();
-    field.x = 96;
-    field.y = 32;
     field.width = 160;
-    field.height = 32;
-    console.log(field);
+    field.height = 24;
+    field.x = (core.width - field.width) / 2;
+    field.y = 64;
+
+    field.onfocus = function () {
+      label.text = 'onfocus called!!';
+    };
+    field.onblur = function () {
+      label.text = 'onblur called!!';
+    };
+
     core.rootScene.addChild(field);
+
+    var label = new Label();
+    label.font = '32px Arial';
+    label.width = 320;
+    label.height = 32;
+    label.moveTo(0, core.height - label.height);
+    label.textAlign = 'center';
+    core.rootScene.addChild(label);
   };
 
   core.start();
