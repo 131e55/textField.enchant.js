@@ -19,7 +19,7 @@ window.onload = function () {
       label.text = 'onblur called!!';
     };
     field.onreturn = function () {
-      label.text = 'onreturn called!!';
+      label.text = 'onreturn called!!<br>' + this.value + '!!';
     };
 
     core.rootScene.addChild(field);
@@ -28,7 +28,8 @@ window.onload = function () {
     label.font = '32px Arial';
     label.width = 320;
     label.height = 32;
-    label.moveTo(0, core.height - label.height);
+    label.x = 0;
+    label.y = core.height - label.height * 2;
     label.textAlign = 'center';
     core.rootScene.addChild(label);
   };

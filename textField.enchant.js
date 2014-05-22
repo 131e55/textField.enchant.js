@@ -4,7 +4,8 @@
       enchant.DomLayer.call(this);
       var that = this;
 
-      // For .onreturn accessor
+      // for accessor
+      this._value = '';
       this._onreturn = null;
 
       // Remove 37 (left-key), 39 (right-key) and 32 (space-key)
@@ -40,6 +41,18 @@
     },
 
     /*
+    * value accessor
+    */
+    value: {
+      get: function() {
+        return this._input.value;
+      },
+      set: function(v) {
+        this._input.value = v;
+      }
+    },
+
+    /*
     * Focus input element
     */
     focus: function() {
@@ -54,7 +67,7 @@
     },
 
     /*
-    * Accessor of onfocus
+    * onfocus accessor
     */
     onfocus: {
       get: function() {
@@ -66,7 +79,7 @@
     },
 
     /*
-    * Accessor of onblur
+    * onblur accessor
     */
     onblur: {
       get: function() {
@@ -78,7 +91,7 @@
     },
 
     /*
-    * Accessor of onreturn
+    * onreturn accessor
     * Call when the return-key pressed.
     */
     onreturn: {
