@@ -13,6 +13,9 @@ window.onload = function () {
     field.y = 64;
     field.placeholder = 'what is your name ?';
 
+    field.style.border = '2px solid #f6c';
+    field.style.borderRadius = '4px';
+
     field.onfocus = function () {
       label.text = 'onfocus called!!';
     };

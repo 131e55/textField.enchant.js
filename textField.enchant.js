@@ -19,8 +19,6 @@
       this._input.style.height = '100%';
       this._element.appendChild(this._input);
 
-      this._input.setAttribute('placeholder', 'aaaa');
-
       // Blur input element, when scene touched (not input element)
       this.on('addedtoscene', function () {
         this.scene.on('touchstart', function () {
@@ -113,6 +111,15 @@
       },
       set: function(f) {
         this._onreturn = f;
+      }
+    },
+
+    /*
+    * style getter
+    */
+    style: {
+      get: function() {
+        return this._input.style;
       }
     },
 
