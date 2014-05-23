@@ -6,9 +6,7 @@ window.onload = function () {
   core.onload = function () {
     core.rootScene.backgroundColor = '#eee';
 
-    var field = new TextField();
-    field.width = 160;
-    field.height = 24;
+    var field = new TextField(160, 24);
     field.x = (core.width - field.width) / 2;
     field.y = 64;
     field.placeholder = 'what is your name ?';

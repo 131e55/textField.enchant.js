@@ -1,8 +1,12 @@
 (function() {
   enchant.TextField = enchant.Class.create(enchant.DomLayer, {
-    initialize: function() {
+    initialize: function(width, height) {
       enchant.DomLayer.call(this);
       var that = this;
+
+      // initialize size
+      this.width = width || 120;
+      this.height = height || 20;
 
       // for accessor
       this._onreturn = null;
