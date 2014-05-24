@@ -12,40 +12,40 @@ Require
 Usage example
 -------------
 ### Create TextField instance
-```
+```js
 var textField = new TextField(160, 24);    // Parameters are width and height
 ```
 
 ### Add to scene
-```
+```js
 core.rootScene.addChild(textField);
 ```
 
 ### Set size
-```
+```js
 textField.width = 120;
 textField.height = 20;
 ```
 
 ### Set position
-```
+```js
 textField.x = 64;
 textField.y = 64;
 ```
 
 ### Set placeholder
-```
+```js
 textField.placeholder = 'what is your name ?';
 ```
 
 ### Set styles
-```
+```js
 textField.style.border = '2px solid #f6c';
 textField.style.borderRadius = '4px';
 ```
 
 ### Define event processes
-```
+```js
 // Call when textField gets focus.
 textField.onfocus = function () {
   console.log('You focuses.');
