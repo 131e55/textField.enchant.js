@@ -6,25 +6,33 @@ window.onload = function () {
   core.onload = function () {
     core.rootScene.backgroundColor = '#eee';
 
-    var field = new TextField(160, 24);
-    field.x = (core.width - field.width) / 2;
-    field.y = 64;
-    field.placeholder = 'what is your name ?';
+    // Create an instance of enchant.TextField
+    var textField = new TextField(160, 24);
 
-    field.style.border = '2px solid #f6c';
-    field.style.borderRadius = '4px';
+    // Set position
+    textField.x = (core.width - textField.width) / 2;
+    textField.y = 64;
 
-    field.onfocus = function () {
+    // Set placeholder
+    textField.placeholder = 'what is your name ?';
+
+    // Set styles
+    textField.style.border = '2px solid #f6c';
+    textField.style.borderRadius = '4px';
+
+    // Define events
+    textField.onfocus = function () {
       label.text = 'onfocus called!!';
     };
-    field.onblur = function () {
+    textField.onblur = function () {
       label.text = 'onblur called!!';
     };
-    field.onreturn = function () {
+    textField.onreturn = function () {
       label.text = 'onreturn called!!<br>' + this.value + '!!';
     };
 
-    core.rootScene.addChild(field);
+    // Add to the scene
+    core.rootScene.addChild(textField);
 
     var label = new Label();
     label.font = '32px Arial';
