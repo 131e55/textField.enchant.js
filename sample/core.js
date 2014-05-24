@@ -1,3 +1,13 @@
+/*
+ * textField.enchant.js v0.1.0 Sample
+ * https://github.com/131e55/textField.enchant.js
+ *
+ * Copyright (c) 2014 Keisuke Kawamura
+ * https://twitter.com/131e55
+ *
+ * Released under the MIT license.
+ */
+
 enchant();
 
 window.onload = function () {
@@ -6,7 +16,8 @@ window.onload = function () {
   core.onload = function () {
     core.rootScene.backgroundColor = '#eee';
 
-    // Create an instance of enchant.TextField
+    // Create instance of TextField
+    // Parameters are width and height
     var textField = new TextField(160, 24);
 
     // Set position
@@ -20,7 +31,7 @@ window.onload = function () {
     textField.style.border = '2px solid #f6c';
     textField.style.borderRadius = '4px';
 
-    // Define events
+    // Define event processes
     textField.onfocus = function () {
       label.text = 'onfocus called!!';
     };

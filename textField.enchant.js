@@ -1,3 +1,15 @@
+/*
+ * textField.enchant.js v0.1.0
+ * https://github.com/131e55/textField.enchant.js
+ *
+ * Copyright (c) 2014 Keisuke Kawamura
+ * https://twitter.com/131e55
+ *
+ * Released under the MIT license.
+ *
+ * Require enchant.js v0.6.0+
+ */
+
 (function() {
   enchant.TextField = enchant.Class.create(enchant.DomLayer, {
     initialize: function(width, height) {
