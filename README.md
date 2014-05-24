@@ -1,2 +1,70 @@
-field
-=====
+textField.enchant.js
+====================
+
+**textField.enchant.js** is a [enchant.js](http://enchantjs.com) plugin.
+
+Use this plugin, and you can use `<input type='text'>` in [enchant.js](http://enchantjs.com) games.
+
+Require
+-------
+[enchant.js](http://enchantjs.com) v0.6.0+
+
+Usage example
+-------------
+### Create TextField instance
+```
+var textField = new TextField(160, 24);    // Parameters are width and height
+```
+
+### Add to scene
+```
+core.rootScene.addChild(textField);
+```
+
+### Set size
+```
+textField.width = 120;
+textField.height = 20;
+```
+
+### Set position
+```
+textField.x = 64;
+textField.y = 64;
+```
+
+### Set placeholder
+```
+textField.placeholder = 'what is your name ?';
+```
+
+### Set styles
+```
+textField.style.border = '2px solid #f6c';
+textField.style.borderRadius = '4px';
+```
+
+### Define event processes
+```
+// Call when textField gets focus.
+textField.onfocus = function () {
+  console.log('You focuses.');
+};
+
+// Call when a user leaves textField
+textField.onblur = function () {
+  console.log('You leaves.');
+};
+
+// Call when a user presses the return-key
+textField.onreturn = function () {
+  console.log('You presses the return-key.');
+};
+```
+
+Copyright and License
+---------------------
+Copyright (c) 2014 Keisuke Kawamura  
+[https://twitter.com/131e55](https://twitter.com/131e55)
+
+Released under the MIT license.
