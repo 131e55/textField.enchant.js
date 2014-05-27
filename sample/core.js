@@ -1,5 +1,5 @@
 /*
- * textField.enchant.js v0.1.0 Sample
+ * textField.enchant.js v0.2.0 Sample
  * https://github.com/131e55/textField.enchant.js
  *
  * Copyright (c) 2014 Keisuke Kawamura
@@ -25,7 +25,7 @@ window.onload = function () {
     textField.y = 64;
 
     // Set placeholder
-    textField.placeholder = 'what is your name ?';
+    textField.setAttribute('placeholder', 'what is your name ?');
 
     // Set styles
     textField.style.border = '2px solid #f6c';

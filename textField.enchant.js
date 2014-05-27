@@ -1,5 +1,5 @@
 /*
- * textField.enchant.js v0.1.0
+ * textField.enchant.js v0.2.0
  * https://github.com/131e55/textField.enchant.js
  *
  * Copyright (c) 2014 Keisuke Kawamura
@@ -59,24 +59,26 @@
     * value accessor
     */
     value: {
-      get: function() {
-        return this._input.value;
-      },
       set: function(v) {
         this._input.value = v;
+      },
+      get: function() {
+        return this._input.value;
       }
     },
 
     /*
-    * placeholder accessor
+    * Get attribute
     */
-    placeholder: {
-      get: function() {
-        return this._input.getAttribute('placeholder');
-      },
-      set: function(v) {
-        this._input.setAttribute('placeholder', v);
-      }
+    getAttribute: function(a) {
+      return this._input.getAttribute(a);
+    },
+
+    /*
+    * Set attribute
+    */
+    setAttribute: function(a, v) {
+      this._input.setAttribute(a, v);
     },
 
     /*
@@ -97,11 +99,11 @@
     * onfocus accessor
     */
     onfocus: {
-      get: function() {
-        return this._input.onfocus;
-      },
       set: function(f) {
         this._input.onfocus = f;
+      },
+      get: function() {
+        return this._input.onfocus;
       }
     },
 
@@ -109,11 +111,11 @@
     * onblur accessor
     */
     onblur: {
-      get: function() {
-        return this._input.onblur;
-      },
       set: function(f) {
         this._input.onblur = f;
+      },
+      get: function() {
+        return this._input.onblur;
       }
     },
 
@@ -122,11 +124,11 @@
     * Call when the return-key pressed.
     */
     onreturn: {
-      get: function() {
-        return this._onreturn;
-      },
       set: function(f) {
         this._onreturn = f;
+      },
+      get: function() {
+        return this._onreturn;
       }
     },
 
