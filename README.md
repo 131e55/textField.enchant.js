@@ -1,6 +1,5 @@
-textField.enchant.js
-====================
-
+textField.enchant.js (v0.2.0)
+=============================
 **textField.enchant.js** is a [enchant.js](http://enchantjs.com) plugin.
 
 Use this plugin, and you can use `<input type='text'>` in [enchant.js](http://enchantjs.com) games.
@@ -33,9 +32,14 @@ textField.x = 64;
 textField.y = 64;
 ```
 
-### Set placeholder
+### Set Attribute
 ```js
-textField.placeholder = 'what is your name ?';
+textField.setAttribute('placeholder', 'what is your name ?');
+```
+
+### Get Attribute
+```js
+var attr = textField.getAttribute('placeholder');
 ```
 
 ### Set styles
